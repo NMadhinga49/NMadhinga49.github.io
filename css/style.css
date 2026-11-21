@@ -1148,3 +1148,121 @@ body.dark .filter-btn.active {
   color: var(--muted);
   margin: 0 0 22px;
 }
+/* TOP NAVBAR SERVICE BUTTON & TWO-STEP MODAL */
+.nav-service-btn {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+body.dark .nav-service-btn {
+  color: #0b1120;
+}
+
+.nav-service-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.service-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-option-card {
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+}
+
+.service-option-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateX(3px);
+}
+
+.service-option-card strong {
+  display: block;
+  font-size: 0.93rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.service-option-card span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.option-arrow {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent) !important;
+  flex-shrink: 0;
+}
+
+.back-step-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.back-step-btn:hover {
+  text-decoration: underline;
+}
+
+.selected-service-bar {
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 9px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+}
+
+.selected-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.selected-service-bar strong {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .nav-service-btn {
+    padding: 7px 11px;
+    font-size: 0.78rem;
+  }
+}

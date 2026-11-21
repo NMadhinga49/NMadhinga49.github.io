@@ -33,6 +33,7 @@
       </nav>
 
       <div class="nav-actions">
+        <button type="button" class="nav-service-btn" data-open-service>Request a Service</button>
         <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle Light/Dark Theme">
           <span class="theme-label">Dark</span>
         </button>
@@ -429,7 +430,7 @@
             <h3>Want a custom portfolio website like this for your career?</h3>
             <p>We build clean, mobile-friendly personal websites for engineers, creatives, developers, graduates, and professionals across all industries—one-time design fee with zero monthly subscriptions.</p>
           </div>
-          <button type="button" id="openInquiryModal" class="btn btn-primary">Request a Portfolio →</button>
+          <button type="button" class="btn btn-primary" data-open-service="Custom Portfolio Website">Request a Portfolio →</button>
         </div>
       </div>
     </section>
@@ -470,18 +471,72 @@
       <p id="lightboxCaption" class="mono"></p>
     </div>
   </div>
-        <!-- PORTFOLIO INQUIRY MODAL -->
-  <div id="inquiryModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="inquiryModalTitle">
+        <!-- INTERACTIVE SERVICE REQUEST MODAL -->
+  <div id="serviceModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle">
     <div class="modal-card">
-      <button type="button" id="closeInquiryModal" class="modal-close" aria-label="Close inquiry form">×</button>
+      <button type="button" id="closeServiceModal" class="modal-close" aria-label="Close service request">×</button>
 
-      <!-- Form View -->
-      <div id="inquiryFormView">
+      <!-- STEP 1: CHOOSE A SERVICE -->
+      <div id="serviceStep1">
         <span class="section-tag">SpatialTech Zimbabwe</span>
-        <h3 id="inquiryModalTitle">Request Your Portfolio Website</h3>
-        <p class="modal-subtitle">Share your contact details and a brief note about your profession or goals. I will respond within 24 hours.</p>
+        <h3 id="serviceModalTitle">Request a Service</h3>
+        <p class="modal-subtitle">Select the service you are interested in to tell us more about your project.</p>
 
-        <form id="portfolioInquiryForm" class="inquiry-form">
+        <div class="service-options-list">
+          <button type="button" class="service-option-card" data-select-service="GIS Spatial Analysis & Cartography">
+            <div>
+              <strong>GIS Spatial Analysis & Cartography</strong>
+              <span>Custom maps, terrain/hydrology modeling & spatial data analysis</span>
+            </div>
+            <span class="option-arrow">→</span>
+          </button>
+
+          <button type="button" class="service-option-card" data-select-service="Cadastral & Engineering Surveying">
+            <div>
+              <strong>Cadastral & Engineering Surveying</strong>
+              <span>Boundary plans, setting-out support, GNSS & AutoCAD Civil 3D</span>
+            </div>
+            <span class="option-arrow">→</span>
+          </button>
+
+          <button type="button" class="service-option-card" data-select-service="QGIS Tutoring & Geospatial Training">
+            <div>
+              <strong>QGIS Tutoring & Geospatial Training</strong>
+              <span>1-on-1 coaching, SpatialTech cohorts & Python/QGIS workflows</span>
+            </div>
+            <span class="option-arrow">→</span>
+          </button>
+
+          <button type="button" class="service-option-card" data-select-service="Custom Portfolio Website">
+            <div>
+              <strong>Custom Portfolio Website</strong>
+              <span>Personal career website designed & launched in 3–5 days</span>
+            </div>
+            <span class="option-arrow">→</span>
+          </button>
+
+          <button type="button" class="service-option-card" data-select-service="General Geospatial Consultation">
+            <div>
+              <strong>Other / Custom Project</strong>
+              <span>Multi-disciplinary spatial consultation or general enquiry</span>
+            </div>
+            <span class="option-arrow">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: ENTER CONTACT & PROJECT DETAILS -->
+      <div id="serviceStep2" style="display: none;">
+        <button type="button" id="backToServicesBtn" class="back-step-btn mono">← Change service</button>
+
+        <div class="selected-service-bar">
+          <span class="selected-label">Selected Service</span>
+          <strong id="chosenServiceTitle">GIS Spatial Analysis & Cartography</strong>
+        </div>
+
+        <form id="serviceRequestForm" class="inquiry-form">
+          <input type="hidden" id="chosenServiceInput" name="service" value="" />
+
           <div class="form-group">
             <label for="clientEmail">Email Address <span class="req-star">*</span></label>
             <input type="email" id="clientEmail" name="email" placeholder="you@example.com" required />
@@ -493,22 +548,22 @@
           </div>
 
           <div class="form-group">
-            <label for="clientMessage">Your Enquiry <span class="req-star">*</span></label>
-            <textarea id="clientMessage" name="message" rows="4" placeholder="Tell me about your field, the work you'd like to showcase, or any questions you have..." required></textarea>
+            <label for="clientMessage">Project & Enquiry Details <span class="req-star">*</span></label>
+            <textarea id="clientMessage" name="message" rows="4" placeholder="Share more details about your project, timeline, or goals..." required></textarea>
           </div>
 
-          <p id="inquiryError" class="form-error" role="alert" style="display: none;"></p>
+          <p id="serviceError" class="form-error" role="alert" style="display: none;"></p>
 
-          <button type="submit" id="submitInquiryBtn" class="btn btn-primary btn-full">Send Enquiry →</button>
+          <button type="submit" id="submitServiceBtn" class="btn btn-primary btn-full">Submit Request →</button>
         </form>
       </div>
 
-      <!-- Confirmation View -->
-      <div id="inquirySuccessView" class="modal-success" style="display: none;">
+      <!-- STEP 3: CONFIRMATION VIEW -->
+      <div id="serviceStep3" class="modal-success" style="display: none;">
         <div class="success-icon">✓</div>
-        <h3>Enquiry Received!</h3>
-        <p>Thank you for reaching out. Your form has been submitted to <strong>SpatialTech Zimbabwe</strong>, and you will receive a reply at <span id="confirmedEmail" class="mono"></span> shortly.</p>
-        <button type="button" id="doneInquiryBtn" class="btn btn-primary btn-full">Back to Portfolio</button>
+        <h3>Request Received!</h3>
+        <p>Thank you for reaching out. Your request for <strong id="confirmedServiceName"></strong> has been submitted to <strong>SpatialTech Zimbabwe</strong>, and you will receive a reply at <span id="confirmedEmail" class="mono"></span> shortly.</p>
+        <button type="button" id="doneServiceBtn" class="btn btn-primary btn-full">Back to Portfolio</button>
       </div>
     </div>
   </div>
