@@ -479,6 +479,48 @@
           </div>
           <button type="button" id="openInquiryModal" class="btn btn-primary">Request a Portfolio →</button>
         </div>
+        <!-- PORTFOLIO INQUIRY MODAL -->
+  <div id="inquiryModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="inquiryModalTitle">
+    <div class="modal-card">
+      <button type="button" id="closeInquiryModal" class="modal-close" aria-label="Close inquiry form">×</button>
+
+      <!-- Form View -->
+      <div id="inquiryFormView">
+        <span class="section-tag">SpatialTech Zimbabwe</span>
+        <h3 id="inquiryModalTitle">Request Your Portfolio Website</h3>
+        <p class="modal-subtitle">Share your contact details and a brief note about your profession or goals. I will respond within 24 hours.</p>
+
+        <form id="portfolioInquiryForm" class="inquiry-form">
+          <div class="form-group">
+            <label for="clientEmail">Email Address <span class="req-star">*</span></label>
+            <input type="email" id="clientEmail" name="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="clientPhone">Phone / WhatsApp Number <span class="opt-label">(Optional)</span></label>
+            <input type="tel" id="clientPhone" name="phone" placeholder="+263 77 000 0000" />
+          </div>
+
+          <div class="form-group">
+            <label for="clientMessage">Your Enquiry <span class="req-star">*</span></label>
+            <textarea id="clientMessage" name="message" rows="4" placeholder="Tell me about your field, the work you'd like to showcase, or any questions you have..." required></textarea>
+          </div>
+
+          <p id="inquiryError" class="form-error" role="alert" style="display: none;"></p>
+
+          <button type="submit" id="submitInquiryBtn" class="btn btn-primary btn-full">Send Enquiry →</button>
+        </form>
+      </div>
+
+      <!-- Confirmation View -->
+      <div id="inquirySuccessView" class="modal-success" style="display: none;">
+        <div class="success-icon">✓</div>
+        <h3>Enquiry Received!</h3>
+        <p>Thank you for reaching out to <strong>SpatialTech Zimbabwe</strong>. Your details have been sent to Nettey, and you will receive a reply at <span id="confirmedEmail" class="mono"></span> shortly.</p>
+        <button type="button" id="doneInquiryBtn" class="btn btn-primary btn-full">Back to Portfolio</button>
+      </div>
+    </div>
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>
