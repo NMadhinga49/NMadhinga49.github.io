@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.08 });
 
   reveals.forEach(el => observer.observe(el));
+
   // 7. Portfolio Request Modal & Direct Email Submission
   const inquiryModal = document.getElementById('inquiryModal');
   const openInquiryBtn = document.getElementById('openInquiryModal');
