@@ -92,4 +92,86 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.08 });
 
   reveals.forEach(el => observer.observe(el));
+  // 7. Portfolio Request Modal & Direct Email Submission
+  const inquiryModal = document.getElementById('inquiryModal');
+  const openInquiryBtn = document.getElementById('openInquiryModal');
+  const closeInquiryBtn = document.getElementById('closeInquiryModal');
+  const doneInquiryBtn = document.getElementById('doneInquiryBtn');
+  const inquiryForm = document.getElementById('portfolioInquiryForm');
+  const formView = document.getElementById('inquiryFormView');
+  const successView = document.getElementById('inquirySuccessView');
+  const submitBtn = document.getElementById('submitInquiryBtn');
+  const errorBox = document.getElementById('inquiryError');
+  const confirmedEmailEl = document.getElementById('confirmedEmail');
+
+  if (inquiryModal && openInquiryBtn && inquiryForm) {
+    const openModal = () => {
+      formView.style.display = 'block';
+      successView.style.display = 'none';
+      errorBox.style.display = 'none';
+      inquiryModal.classList.add('open');
+      inquiryModal.setAttribute('aria-hidden', 'false');
+    };
+
+    const closeModal = () => {
+      inquiryModal.classList.remove('open');
+      inquiryModal.setAttribute('aria-hidden', 'true');
+    };
+
+    openInquiryBtn.addEventListener('click', openModal);
+    if (closeInquiryBtn) closeInquiryBtn.addEventListener('click', closeModal);
+    if (doneInquiryBtn) doneInquiryBtn.addEventListener('click', closeModal);
+
+    inquiryModal.addEventListener('click', (e) => {
+      if (e.target === inquiryModal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && inquiryModal.classList.contains('open')) closeModal();
+    });
+
+    inquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorBox.style.display = 'none';
+
+      const email = document.getElementById('clientEmail').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim() || 'Not provided';
+      const message = document.getElementById('clientMessage').value.trim();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending Enquiry...';
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/madhinganettey@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            Email: email,
+            Phone: phone,
+            Enquiry: message,
+            _subject: 'New Portfolio Website Enquiry — SpatialTech Zimbabwe',
+            _template: 'table'
+          })
+        });
+
+        if (!response.ok) throw new Error('Submission failed');
+
+        confirmedEmailEl.textContent = email;
+        inquiryForm.reset();
+        formView.style.display = 'none';
+        successView.style.display = 'block';
+      } catch (err) {
+        errorBox.innerHTML = 'Could not send automatically right now. Please <a href="mailto:madhinganettey@gmail.com?subject=Portfolio%20Website%20Enquiry&body=' +
+          encodeURIComponent('Email: ' + email + '\nPhone: ' + phone + '\n\nEnquiry:\n' + message) +
+          '" style="color: inherit; text-decoration: underline;">click here to send via email</a> or message +263 77 678 9729 on WhatsApp.';
+        errorBox.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Enquiry →';
+      }
+    });
+  }
 });
