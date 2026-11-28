@@ -1502,3 +1502,152 @@ body.dark .exp-item.current::before {
     padding: 26px 22px;
   }
 }
+/* CASE STUDY DETAIL PAGES */
+.case-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 28px 0 36px;
+}
+
+.case-spec-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.case-spec-box span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.case-spec-box b {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.case-section {
+  margin-bottom: 40px;
+}
+
+.case-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-section p {
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.workflow-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.workflow-step {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  align-items: start;
+}
+
+.workflow-step .step-num {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.workflow-step b {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.workflow-step span {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.case-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.case-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+.case-table th,
+.case-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-table th {
+  background: var(--bg-alt);
+  color: var(--accent);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.case-table tr:last-child td {
+  border-bottom: none;
+}
+
+.case-nav-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .case-spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .case-spec-grid {
+    grid-template-columns: 1fr;
+  }
+  .workflow-step {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .workflow-step .step-num {
+    justify-self: start;
+  }
+}
