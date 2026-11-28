@@ -1425,3 +1425,21 @@ body.dark #themeToggle .icon-sun {
     white-space: normal;
   }
 }
+/* GREEN INDICATOR FOR CURRENT POSITION */
+.timeline-item.current .timeline-dot,
+.exp-item.current .exp-dot,
+.timeline-item.current::before,
+.exp-item.current::before {
+  background: #16a34a !important;
+  border-color: rgba(22, 163, 74, 0.22) !important;
+  box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.15);
+}
+
+body.dark .timeline-item.current .timeline-dot,
+body.dark .exp-item.current .exp-dot,
+body.dark .timeline-item.current::before,
+body.dark .exp-item.current::before {
+  background: #22c55e !important;
+  border-color: rgba(34, 197, 94, 0.25) !important;
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.18);
+}
