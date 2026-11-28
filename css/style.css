@@ -1331,3 +1331,23 @@ body.dark .nav-service-btn {
     width: 100%;
   }
 }
+/* THEME ICON BUTTON */
+#themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  line-height: 1;
+}
+
+#themeToggle .icon-sun {
+  display: none;
+}
+
+body.dark #themeToggle .icon-moon {
+  display: none;
+}
+
+body.dark #themeToggle .icon-sun {
+  display: block;
+}
