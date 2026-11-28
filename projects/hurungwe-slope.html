@@ -4,12 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hurungwe District Slope Suitability Analysis — Nettey Madhinga</title>
-  <meta name="description" content="Percentage slope suitability analysis (0–10%, 10–20%, >20%) in WGS 84 / UTM Zone 36S (EPSG:32736) with Southern African Gauss Conform Lo 29° meridian zone framing for Hurungwe District, Zimbabwe." />
-
+  <meta name="description" content="Percentage slope suitability analysis (0–10%, 10–20%, >20%) in WGS 84 / UTM Zone 36S (EPSG:32736) with Lo 29° Gauss Conform meridian framing for Hurungwe District, Zimbabwe." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="../css/style.css?v=9" />
   <style>
     .case-hero { padding: 112px 0 44px; border-bottom: 1px solid var(--border); }
@@ -18,43 +16,32 @@
     .eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: var(--accent); }
     .case-hero h1 { font-size: clamp(1.85rem, 3.6vw, 2.75rem); color: var(--ink); margin: 12px 0 16px; }
     .case-lead { color: var(--muted); max-width: 780px; margin: 0; font-size: 0.96rem; }
-
     .case-map-frame { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin: 32px 0 36px; box-shadow: var(--shadow-md); }
     .case-map-frame img { width: 100%; height: auto; display: block; border-radius: 8px; }
     .case-map-caption { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 12px; font-size: 0.78rem; color: var(--muted); }
     .case-map-caption a { color: var(--accent); text-decoration: none; font-weight: 600; }
     .case-map-caption a:hover { text-decoration: underline; }
-
     .case-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 36px; align-items: start; margin-top: 24px; }
     .case-content h2 { font-size: 1.25rem; color: var(--ink); margin: 32px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
     .case-content h2:first-child { margin-top: 0; }
     .case-content p { line-height: 1.75; color: var(--muted); margin: 0 0 16px; font-size: 0.92rem; }
     .case-content strong { color: var(--ink); }
-
     .workflow-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
     .workflow-step { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 6px !important; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
     .step-badge { display: inline-block; width: auto; font-size: 0.72rem; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 5px; margin-bottom: 4px; }
     .workflow-step b { display: block; width: 100%; font-size: 0.94rem; color: var(--ink); margin-bottom: 2px; }
     .workflow-step span:not(.step-badge) { display: block; width: 100%; font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
-
     .case-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); margin-top: 14px; }
     .case-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left; }
     .case-table th, .case-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
     .case-table th { background: var(--bg-alt); color: var(--accent); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .case-table tr:last-child td { border-bottom: none; }
-
     .case-sidebar { position: sticky; top: 92px; min-width: 0; }
     .case-sidebar .spec-card { width: 100%; box-sizing: border-box; }
     .case-sidebar .spec-row { font-size: 0.8rem; gap: 12px; }
-    .case-sidebar .spec-row span,
-    .case-sidebar .spec-row b { white-space: normal !important; }
-
+    .case-sidebar .spec-row span, .case-sidebar .spec-row b { white-space: normal !important; }
     .case-nav-footer { margin-top: 52px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
-
-    @media (max-width: 900px) {
-      .case-grid { grid-template-columns: 1fr; }
-      .case-sidebar { position: static; }
-    }
+    @media (max-width: 900px) { .case-grid { grid-template-columns: 1fr; } .case-sidebar { position: static; } }
   </style>
 </head>
 <body>
@@ -99,10 +86,10 @@
           <div class="case-content">
             <h2>Project Overview & Geodetic Rationale</h2>
             <p>
-              Bordered by the <strong>Zambezi River</strong> to the north and the <strong>Sanyati River</strong> to the southwest, <strong>Hurungwe District</strong> spans dramatic topographic transitions between the low-lying Zambezi Valley floor, the rugged Zambezi Escarpment, and the central agricultural plateau. This terrain suitability analysis quantifies surface steepness to support road alignment, settlement siting, and civil earthworks estimation.
+              Bordered by the <strong>Zambezi River</strong> to the north and the <strong>Sanyati River</strong> to the southwest, <strong>Hurungwe District</strong> spans dramatic topographic transitions between the low-lying Zambezi Valley floor, the rugged Zambezi Escarpment, and the central agricultural plateau. This suitability analysis quantifies surface steepness to guide road alignment, settlement siting, and civil earthworks estimation.
             </p>
             <p>
-              Slope rasters were derived in <strong>WGS 84 / UTM Zone 36S (EPSG:32736)</strong> to preserve true horizontal-to-vertical metric ratios ($\text{Slope \%} = \frac{\Delta Z}{\Delta D} \times 100$), while framing the district within Zimbabwe's national <strong>Lo 29° Gauss Conform</strong> meridian belt for cadastral and engineering survey continuity.
+              Slope rasters were derived in <strong>WGS 84 / UTM Zone 36S (EPSG:32736)</strong> to preserve true horizontal-to-vertical metric ratios (Slope % = ΔZ / ΔD × 100), while framing the district within Zimbabwe's national <strong>Lo 29° Gauss Conform</strong> meridian belt for cadastral and engineering survey continuity.
             </p>
 
             <h2>Methodology & QGIS Spatial Workflow</h2>
@@ -112,12 +99,88 @@
                 <b>Metric Surface Preparation</b>
                 <span>Sourced SRTM Digital Elevation Model tiles, reprojected the DEM and administrative vectors from the Zimbabwe GeoPortal into <strong>WGS 84 / UTM Zone 36S (EPSG:32736)</strong>, and clipped the raster to the Hurungwe District boundary.</span>
               </div>
-
               <div class="workflow-step">
                 <span class="step-badge mono">02 · PERCENTAGE SLOPE DERIVATION</span>
                 <b>Raster Gradient Computation</b>
                 <span>Executed QGIS/GDAL raster terrain analysis using a Z-factor of 1.0 to compute continuous percentage slope values across the district's plateau, escarpment, and valley floor zones.</span>
               </div>
-
               <div class="workflow-step">
-                <span class="step-badge
+                <span class="step-badge mono">03 · ENGINEERING SUITABILITY RECLASSIFICATION</span>
+                <b>Three-Tier Development Risk Classification</b>
+                <span>Reclassified continuous slope percentages into three operational engineering categories: <strong>Highly Suitable (0–10%)</strong>, <strong>Moderate — Earthworks Required (10–20%)</strong>, and <strong>Unstable — Steep Terrain (>20%)</strong>.</span>
+              </div>
+              <div class="workflow-step">
+                <span class="step-badge mono">04 · LO 29° MERIDIAN BELT & LAYOUT FRAMING</span>
+                <b>Geodetic Survey Zone Integration</b>
+                <span>Incorporated Zimbabwe's national Gauss Conform meridian belts (<strong>Lo 27°, Lo 29°, Lo 31°, Lo 33°</strong>) in both the main map frame and national locator inset to contextualize cadastral and engineering survey zone coverage across the district.</span>
+              </div>
+            </div>
+
+            <h2>Key Findings & Engineering Suitability Matrix</h2>
+            <p>
+              Steep, unstable slopes (<strong>>20%</strong>) concentrate sharply along the <strong>Zambezi Escarpment</strong> drop-off and deeply incised river tributaries, whereas gentle gradients (<strong>0–10%</strong>) dominate the northern Zambezi Valley floor and southern plateau interiors.
+            </p>
+
+            <div class="case-table-wrap">
+              <table class="case-table">
+                <thead>
+                  <tr>
+                    <th>Slope Class</th>
+                    <th>Spatial Distribution</th>
+                    <th>Civil Engineering & Planning Implication</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Highly Suitable (0–10%)</b></td>
+                    <td>Southern plateau interiors & northern valley floor</td>
+                    <td>Optimal for standard building foundations, road corridors, rural service centers & mechanized farming</td>
+                  </tr>
+                  <tr>
+                    <td><b>Moderate (10–20%)</b></td>
+                    <td>Rolling transitional uplands & escarpment footslopes</td>
+                    <td>Requires cut-and-fill earthworks, engineered stormwater drainage & contour soil conservation</td>
+                  </tr>
+                  <tr>
+                    <td><b>Unstable (>20%)</b></td>
+                    <td>Zambezi Escarpment scarp & dissected tributaries</td>
+                    <td>High erosion and slope-failure hazard; avoid heavy infrastructure and preserve protective vegetation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="case-sidebar">
+            <div class="spec-card">
+              <div class="spec-card-title">Technical Specifications</div>
+              <div class="spec-row"><span>Study Area</span><b>Hurungwe District, ZW</b></div>
+              <div class="spec-row"><span>Analysis CRS</span><b>EPSG:32736 (UTM 36S)</b></div>
+              <div class="spec-row"><span>Survey Belt</span><b>Lo 29° Meridian Zone</b></div>
+              <div class="spec-row"><span>National Belts</span><b>Lo 27°–33° Gauss Conform</b></div>
+              <div class="spec-row"><span>Slope Classes</span><b>0–10%, 10–20%, >20%</b></div>
+              <div class="spec-row"><span>Data Sources</span><b>SRTM DEM, ZimGeoPortal</b></div>
+              <div class="spec-row"><span>Software</span><b>QGIS Raster & Layout</b></div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="case-nav-footer">
+          <a href="gutu-hypsometric.html" class="btn btn-outline">← Prev: Gutu Hypsometric</a>
+          <a href="zaka-soils.html" class="btn btn-primary">Next: Zaka Soils & Farming →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom mono" style="border-top: none; padding-top: 0;">
+        <span>© <span id="year"></span> Nettey Madhinga.</span>
+        <a href="../index.html#projects" style="color: inherit;">← Return to Portfolio</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
