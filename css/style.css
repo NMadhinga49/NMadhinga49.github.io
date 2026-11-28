@@ -1351,3 +1351,40 @@ body.dark #themeToggle .icon-moon {
 body.dark #themeToggle .icon-sun {
   display: block;
 }
+/* HERO JACK DANGERMOND QUOTE & CLEAN PHOTO CAPTION */
+.hero-quote {
+  margin: 0 0 28px;
+  padding: 4px 0 4px 16px;
+  border-left: 3px solid var(--accent);
+  font-style: italic;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 620px;
+}
+
+.hero-quote cite {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 14px;
+}
+
+.hero-card-meta strong {
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.hero-card-meta span {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
