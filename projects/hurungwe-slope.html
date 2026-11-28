@@ -4,20 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hurungwe District Slope Suitability Analysis — Nettey Madhinga</title>
+  <meta name="description" content="Percentage slope suitability analysis (0–10%, 10–20%, >20%) in WGS 84 / UTM Zone 36S (EPSG:32736) with Southern African Gauss Conform Lo 29° meridian zone framing for Hurungwe District, Zimbabwe." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css?v=9" />
   <style>
-    .case-hero { padding: 120px 0 48px; border-bottom: 1px solid var(--border); }
-    .back-link { display: inline-block; margin-bottom: 20px; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
-    .case-map-frame { background: var(--bg-alt); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin: 36px 0; }
-    .case-map-frame img { width: 100%; height: auto; display: block; border-radius: 6px; }
-    .case-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; align-items: start; margin-top: 32px; }
-    .case-content h3 { margin: 28px 0 12px; font-family: 'Instrument Serif', Georgia, serif; font-size: 1.65rem; font-weight: 400; }
-    .case-content p, .case-content li { line-height: 1.7; opacity: 0.9; margin-bottom: 14px; }
-    .case-content ul { padding-left: 20px; }
-    @media (max-width: 820px) { .case-grid { grid-template-columns: 1fr; } }
+    .case-hero { padding: 112px 0 44px; border-bottom: 1px solid var(--border); }
+    .back-link { display: inline-block; margin-bottom: 18px; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+    .back-link:hover { text-decoration: underline; }
+    .eyebrow { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; color: var(--accent); }
+    .case-hero h1 { font-size: clamp(1.85rem, 3.6vw, 2.75rem); color: var(--ink); margin: 12px 0 16px; }
+    .case-lead { color: var(--muted); max-width: 780px; margin: 0; font-size: 0.96rem; }
+
+    .case-map-frame { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin: 32px 0 36px; box-shadow: var(--shadow-md); }
+    .case-map-frame img { width: 100%; height: auto; display: block; border-radius: 8px; }
+    .case-map-caption { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; padding-top: 12px; font-size: 0.78rem; color: var(--muted); }
+    .case-map-caption a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .case-map-caption a:hover { text-decoration: underline; }
+
+    .case-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 36px; align-items: start; margin-top: 24px; }
+    .case-content h2 { font-size: 1.25rem; color: var(--ink); margin: 32px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .case-content h2:first-child { margin-top: 0; }
+    .case-content p { line-height: 1.75; color: var(--muted); margin: 0 0 16px; font-size: 0.92rem; }
+    .case-content strong { color: var(--ink); }
+
+    .workflow-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+    .workflow-step { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 6px !important; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+    .step-badge { display: inline-block; width: auto; font-size: 0.72rem; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: 5px; margin-bottom: 4px; }
+    .workflow-step b { display: block; width: 100%; font-size: 0.94rem; color: var(--ink); margin-bottom: 2px; }
+    .workflow-step span:not(.step-badge) { display: block; width: 100%; font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
+    .case-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); margin-top: 14px; }
+    .case-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left; }
+    .case-table th, .case-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .case-table th { background: var(--bg-alt); color: var(--accent); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .case-table tr:last-child td { border-bottom: none; }
+
+    .case-sidebar { position: sticky; top: 92px; min-width: 0; }
+    .case-sidebar .spec-card { width: 100%; box-sizing: border-box; }
+    .case-sidebar .spec-row { font-size: 0.8rem; gap: 12px; }
+    .case-sidebar .spec-row span,
+    .case-sidebar .spec-row b { white-space: normal !important; }
+
+    .case-nav-footer { margin-top: 52px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; }
+
+    @media (max-width: 900px) {
+      .case-grid { grid-template-columns: 1fr; }
+      .case-sidebar { position: static; }
+    }
   </style>
 </head>
 <body>
@@ -43,58 +80,44 @@
       <div class="container">
         <a href="../index.html#projects" class="back-link mono">← Back to all projects</a>
         <div class="eyebrow mono">ENGINEERING & GEODETIC SUITABILITY · Lo 29° / EPSG:32736</div>
-        <h1 style="font-size: clamp(2.2rem, 4.5vw, 3.6rem); margin: 12px 0 16px;">Hurungwe District Slope Suitability Analysis</h1>
-        <p class="hero-lead">Terrain gradient classification and Southern African Gauss Conform Lo 29° meridian zone framing for civil infrastructure and land development.</p>
+        <h1>Hurungwe District Slope Suitability Analysis</h1>
+        <p class="case-lead">Terrain gradient classification (0–10%, 10–20%, >20%) and Southern African Gauss Conform Lo 29° meridian zone framing for civil infrastructure and land development.</p>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="padding-top: 24px;">
       <div class="container">
-        <div class="case-map-frame">
+        <figure class="case-map-frame">
           <img src="../assets/maps/hurungwe-slope.png" alt="Hurungwe District Slope Suitability Analysis Map" />
-        </div>
+          <figcaption class="case-map-caption mono">
+            <span>CRS: EPSG:32736 (UTM 36S) · Survey Belt: Lo 29° Gauss Conform</span>
+            <a href="../assets/maps/hurungwe-slope.png" target="_blank" rel="noopener">Inspect Full-Resolution Map ↗</a>
+          </figcaption>
+        </figure>
 
         <div class="case-grid">
           <div class="case-content">
-            <h3>Project Overview</h3>
+            <h2>Project Overview & Geodetic Rationale</h2>
             <p>
-              Bordered by the Zambezi River to the north and the Sanyati River to the southwest, Hurungwe District features dramatic escarpment transitions between the Zambezi Valley floor and the central plateau. This suitability analysis evaluates terrain steepness to guide road alignment, settlement planning, and earthworks estimation.
+              Bordered by the <strong>Zambezi River</strong> to the north and the <strong>Sanyati River</strong> to the southwest, <strong>Hurungwe District</strong> spans dramatic topographic transitions between the low-lying Zambezi Valley floor, the rugged Zambezi Escarpment, and the central agricultural plateau. This terrain suitability analysis quantifies surface steepness to support road alignment, settlement siting, and civil earthworks estimation.
+            </p>
+            <p>
+              Slope rasters were derived in <strong>WGS 84 / UTM Zone 36S (EPSG:32736)</strong> to preserve true horizontal-to-vertical metric ratios ($\text{Slope \%} = \frac{\Delta Z}{\Delta D} \times 100$), while framing the district within Zimbabwe's national <strong>Lo 29° Gauss Conform</strong> meridian belt for cadastral and engineering survey continuity.
             </p>
 
-            <h3>Methodology & Geodetic Framing</h3>
-            <ul>
-              <li><strong>SRTM DEM Slope Derivation:</strong> Computed percentage slope rasters in <strong>WGS 84 / UTM Zone 36S (EPSG:32736)</strong> from SRTM elevation data to ensure accurate horizontal-to-vertical gradient ratios.</li>
-              <li><strong>Engineering Suitability Reclassification:</strong> Segmented terrain into three operational zones: <strong>Highly Suitable (0–10%)</strong> for standard construction, <strong>Moderate — Earthworks Required (10–20%)</strong>, and <strong>Unstable — Steep Terrain (>20%)</strong> prone to erosion and slope failure.</li>
-              <li><strong>Lo 29° Meridian Zone Integration:</strong> Incorporated Zimbabwe's national Gauss Conform meridian belts (Lo 27°, Lo 29°, Lo 31°, Lo 33°) in both the main map frame and national locator inset to illustrate survey zone coverage across the district.</li>
-            </ul>
+            <h2>Methodology & QGIS Spatial Workflow</h2>
+            <div class="workflow-list">
+              <div class="workflow-step">
+                <span class="step-badge mono">01 · SRTM DEM ACQUISITION & REPROJECTION</span>
+                <b>Metric Surface Preparation</b>
+                <span>Sourced SRTM Digital Elevation Model tiles, reprojected the DEM and administrative vectors from the Zimbabwe GeoPortal into <strong>WGS 84 / UTM Zone 36S (EPSG:32736)</strong>, and clipped the raster to the Hurungwe District boundary.</span>
+              </div>
 
-            <h3>Key Findings</h3>
-            <p>
-              Steep, unstable escarpment slopes (>20%) concentrate along the Zambezi escarpment drop-off and dissected tributaries, whereas gentle gradients (0–10%) dominate the northern valley floor and southern plateau interiors.
-            </p>
-          </div>
+              <div class="workflow-step">
+                <span class="step-badge mono">02 · PERCENTAGE SLOPE DERIVATION</span>
+                <b>Raster Gradient Computation</b>
+                <span>Executed QGIS/GDAL raster terrain analysis using a Z-factor of 1.0 to compute continuous percentage slope values across the district's plateau, escarpment, and valley floor zones.</span>
+              </div>
 
-          <aside class="spec-card">
-            <div class="spec-row"><span>Study Area</span><b>Hurungwe District, ZW</b></div>
-            <div class="spec-row"><span>Analysis CRS</span><b>EPSG:32736 (UTM 36S)</b></div>
-            <div class="spec-row"><span>Survey Belt</span><b>Lo 29° Meridian Zone</b></div>
-            <div class="spec-row"><span>Slope Classes</span><b>0–10%, 10–20%, >20%</b></div>
-            <div class="spec-row"><span>Data Sources</span><b>SRTM DEM, ZimGeoPortal</b></div>
-            <div class="spec-row"><span>Software</span><b>QGIS Raster & Layout</b></div>
-          </aside>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom mono">
-        <span>© <span id="year"></span> Nettey Madhinga.</span>
-        <a href="../index.html#projects" style="color: inherit;">← Return to Portfolio</a>
-      </div>
-    </div>
-  </footer>
-  <script src="../js/main.js"></script>
-</body>
-</html>
+              <div class="workflow-step">
+                <span class="step-badge
