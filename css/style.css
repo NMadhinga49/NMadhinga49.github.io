@@ -1,30 +1,30 @@
 :root {
-  --bg: #f8fafc;
-  --bg-alt: #f1f5f9;
-  --surface: #ffffff;
-  --ink: #0f172a;
-  --muted: #475569;
-  --accent: #0d9488;
-  --accent-hover: #0f766e;
-  --accent-soft: rgba(13, 148, 136, 0.1);
-  --border: #e2e8f0;
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 12px 32px -8px rgba(15, 23, 42, 0.08);
+  --bg: #f6f6f3;
+  --bg-alt: #ecece6;
+  --surface: #fcfbf9;
+  --ink: #1e2936;
+  --muted: #556374;
+  --accent: #8c6f23;
+  --accent-hover: #735a1a;
+  --accent-soft: rgba(140, 111, 35, 0.1);
+  --border: #dcdcd3;
+  --shadow-sm: 0 1px 3px rgba(30, 41, 54, 0.05);
+  --shadow-md: 0 14px 32px -8px rgba(30, 41, 54, 0.09);
   --radius: 12px;
 }
 
 body.dark {
-  --bg: #0b1120;
-  --bg-alt: #111827;
-  --surface: #162032;
-  --ink: #f1f5f9;
-  --muted: #94a3b8;
-  --accent: #2dd4bf;
-  --accent-hover: #14b8a6;
-  --accent-soft: rgba(45, 212, 191, 0.12);
-  --border: #1e293b;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 12px 32px -8px rgba(0, 0, 0, 0.45);
+  --bg: #192738;
+  --bg-alt: #14202e;
+  --surface: #213247;
+  --ink: #e2e8f0;
+  --muted: #96a8be;
+  --accent: #d9be6c;
+  --accent-hover: #c9ad58;
+  --accent-soft: rgba(217, 190, 108, 0.13);
+  --border: #2c4059;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.22);
+  --shadow-md: 0 14px 32px -8px rgba(0, 0, 0, 0.4);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -34,8 +34,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.65;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.94rem;
+  line-height: 1.75;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -45,15 +46,30 @@ body {
   padding: 0 24px;
 }
 
-.mono {
-  font-family: 'JetBrains Mono', monospace;
-}
+.mono { font-family: 'JetBrains Mono', monospace; }
 
 h1, h2, h3, h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  letter-spacing: -0.025em;
-  line-height: 1.18;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: -0.02em;
+  line-height: 1.24;
   margin-top: 0;
+}
+
+.hero h1 {
+  color: var(--accent);
+}
+
+.hero-subtitle,
+blockquote,
+.quote-block p {
+  font-style: italic;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* STICKY HEADER */
@@ -831,8 +847,8 @@ body.dark .filter-btn.active {
 
 /* FOOTER */
 .site-footer {
-  background: #0f172a;
-  color: #f8fafc;
+  background: #14202e;
+  color: #e2e8f0;
   padding: 72px 0 36px;
 }
 
